@@ -1,0 +1,24 @@
+# File is inherited by all apps handled by config-server.
+# If custom microservice properties file exists, is overriden.
+
+parentMessage: Hello Spring Actuator! Finally!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# Opcjonalne jeśli zostawimy domyślny adres eureki (:8761)
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# Opcjonalne jeśli zostawimy domyślny adres serwera konfiguracyjnego (:8888)
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
