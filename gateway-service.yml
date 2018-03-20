@@ -3,7 +3,7 @@ spring:
     name: gateway-service
 
 server:
-  port: 8080
+  port: 80
 
 ribbon:
   eureka:
@@ -13,4 +13,13 @@ zuul:
   routes:
     notifications:
       path: /notifications/**
-      url: http://localhost:10001/
+      serviceId: notification-service
+    config-server:
+      path: /config-server/**
+      serviceId: config-server
+    eureka-server:
+      path: /eureka/**
+      serviceId: eureka-server
+    dashboard:
+      path: /dashboard/**
+      serviceId: dashboard
