@@ -12,7 +12,7 @@ ribbon:
 zuul:
   routes:
     notifications:
-      path: /notifications/**
+      path: /notification-service/**
       serviceId: notification-service
     config-server:
       path: /config-server/**
@@ -20,6 +20,6 @@ zuul:
     eureka-server:
       path: /eureka/**
       serviceId: eureka-server
-    dashboard:
-      path: /dashboard/**
-      serviceId: dashboard
+    monitor-service:
+      path: /monitor-service/**
+      serviceId: monitor-service
