@@ -2,9 +2,3 @@
 # If custom microservice properties file exists, is overriden.
 
 parentMessage: Hello Spring Actuator! Finally!
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
