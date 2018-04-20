@@ -3,11 +3,13 @@ spring:
     name: gateway-service
 
 server:
-  port: 80
+  port: 8081
 
-ribbon:
-  eureka:
-    enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URI:http://localhost:8761/eureka/}
+#      EUREKA_URI: http://eureka-server:8761/eureka/
 
 zuul:
   routes:
@@ -23,3 +25,7 @@ zuul:
     monitor-service:
       path: /monitor-service/**
       serviceId: monitor-service
+
+ribbon:
+  eureka:
+    enabled: true
